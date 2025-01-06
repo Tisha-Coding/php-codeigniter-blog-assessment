@@ -4,7 +4,7 @@
 This project is a blog application built using HTML, CSS, JavaScript, PHP, and the CodeIgniter framework. The application includes two distinct parts: an **Admin Panel** and a **User-facing Blog Website**.
 
 ### Admin Panel
-The Admin Panel provides the following functionalities::
+The Admin Panel provides the following functionalities:
 - **Signup & Login**: Admins can sign up and log in for authentication.
 - **Blog Management**: Admins can create, edit, delete, and view blog posts.
 - **User Query Management**: Admins can view and delete queries submitted by users.
@@ -35,30 +35,45 @@ Make sure the following software is installed on your machine:
 - **CodeIgniter 4** framework
 
 ### Installation Steps
-1. **Clone the repository**:
+1. **Set Up XAMPP**:
+   - Install XAMPP and start the Apache and MySQL services.
+2. **Create the Database**:
+   - Create a MySQL database named `blog_db`.
+   - Create the required tables (`admins`, `blogs`, `comments`, `contact`, `users`) with the necessary fields. You can use the `blog_db.sql` file present in the `Databases` folder for this.
+3. **Clone the repository**:
     ```bash
     git clone https://github.com/YOUR_USERNAME/php-codeigniter-blog-assessment.git
     ```
-2. **Navigate into the project directory**:
+4. **Navigate into the project directory**:
     ```bash
     cd php-codeigniter-blog-assessment
     ```
-3. **Install dependencies** using Composer:
+5. **Install dependencies** using Composer:
     ```bash
     composer install
     ```
-4. **Set up your environment** by copying `.env.example` to `.env`:
+6. **Set up your environment** by copying `.env.example` to `.env`:
     ```bash
     cp .env.example .env
     ```
-5. **Configure your database settings** in the `.env` file (DB credentials).
-6. **Run migrations** to set up the database:
+7. **Configure your database settings** in the `.env` file (DB credentials).
+8. **Run migrations** to set up the database:
     ```bash
     php spark migrate
     ```
-7. **Start the local development server** using XAMPP:
-    - Open **XAMPP** and start the **Apache** and **MySQL** services.
-    - Navigate to the `htdocs` folder inside your XAMPP installation directory, and copy the project folder there.
+
+### Quick Setup (If Pre-requisites Are Met)
+If you have already set up the XAMPP server, created the `blog_db` database with the required tables (`admins`, `blogs`, `comments`, `contact`, `users`) using the `blog_db.sql` file, installed Composer and CodeIgniter 4, and have PHP 8.0 or higher, you just need to:
+
+1. Clone the repo inside the `/xampp/htdocs/` folder.
+2. Open the Command Prompt and navigate to the project folder.
+3. Run the following commands:
+    ```bash
+    composer install
+    php spark serve --port=8081
+    ```
+
+After running the above commands, you can access the app by clicking on the link provided in the terminal (usually `http://localhost:8081`) or by pasting the URL into your browser.
 
 ---
 
